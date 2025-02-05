@@ -1,0 +1,14 @@
+name: Sample Java flow
+
+on: push
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v4
+    - uses: actions/setup-java@v4
+      with:
+        distribution: 'temurin' # See 'Supported Distributions' for available options
+        java-version: '21'
+    - run: java HelloWorldApp.java # We need to create this Java file or it will fail
